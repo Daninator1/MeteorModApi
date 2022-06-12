@@ -1,8 +1,10 @@
 using MeteorModApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeteorModApi.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class PlayStatusController : ControllerBase
