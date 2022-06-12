@@ -3,12 +3,12 @@
 public class PlayStatusService : IPlayStatusService
 {
     private readonly int maxAgeInMinutes;
-    private IDictionary<Guid, PlayStatusEntry> entries;
+    private IDictionary<string, PlayStatusEntry> entries;
 
     public PlayStatusService(int maxAgeInMinutes)
     {
         this.maxAgeInMinutes = maxAgeInMinutes;
-        this.entries = new Dictionary<Guid, PlayStatusEntry>();
+        this.entries = new Dictionary<string, PlayStatusEntry>();
     }
 
     public IEnumerable<PlayStatusEntry> GetEntries()
@@ -19,18 +19,18 @@ public class PlayStatusService : IPlayStatusService
 
     public void AddOrUpdateEntry(PlayStatusEntry entry)
     {
-        if (this.entries.ContainsKey(entry.PlayerId))
-            this.entries[entry.PlayerId] = entry;
+        if (this.entries.ContainsKey(entry.Name))
+            this.entries[entry.Name] = entry;
         else
-            this.entries.Add(entry.PlayerId, entry);
+            this.entries.Add(entry.Name, entry);
     }
 
-    public void RemoveEntry(Guid id)
+    public void RemoveEntry(string name)
     {
-        if (this.entries.ContainsKey(id)) this.entries.Remove(id);
+        if (this.entries.ContainsKey(name)) this.entries.Remove(name);
     }
 
-    private IDictionary<Guid, PlayStatusEntry> FilterInactiveEntries(IDictionary<Guid, PlayStatusEntry> unfiltered)
+    private IDictionary<string, PlayStatusEntry> FilterInactiveEntries(IDictionary<string, PlayStatusEntry> unfiltered)
         => unfiltered
             .Where(e => e.Value.Inserted.AddMinutes(this.maxAgeInMinutes) > DateTime.Now)
             .ToDictionary(e => e.Key, e => e.Value);

@@ -25,6 +25,6 @@ public class PlayStatusController : ControllerBase
     public void Post(PlayStatusEntry playerEntry) => this.playStatusService.AddOrUpdateEntry(playerEntry);
 
     [HttpDelete]
-    [Route("{id:guid}")]
-    public void Delete(Guid id) => this.playStatusService.RemoveEntry(id);
+    [Route("{name}")]
+    public void Delete(string name) => this.playStatusService.RemoveEntry(name);
 }

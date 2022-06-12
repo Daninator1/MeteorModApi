@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace MeteorModApi;
 
 public class PlayStatusEntry
 {
-    public Guid PlayerId { get; init; }
+    [MinLength(1)]
+    public string Name { get; init; }
 
     public string PlayerName { get; init; }
 
