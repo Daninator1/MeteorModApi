@@ -17,13 +17,9 @@ builder.Services.AddAuthentication(ApiKeyDefaults.AuthenticationScheme)
             OnValidateKey = context =>
             {
                 if (context.ApiKey == builder.Configuration.GetValue<string>("ApiKey"))
-                {
                     context.ValidationSucceeded();
-                }
                 else
-                {
                     context.ValidationFailed();
-                }
 
                 return Task.CompletedTask;
             }
