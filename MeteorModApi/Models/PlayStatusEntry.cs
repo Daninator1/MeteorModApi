@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MeteorModApi;
+namespace MeteorModApi.Models;
 
 public class PlayStatusEntry
 {

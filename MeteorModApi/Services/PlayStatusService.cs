@@ -1,4 +1,6 @@
-﻿namespace MeteorModApi.Services;
+﻿using MeteorModApi.Models;
+
+namespace MeteorModApi.Services;
 
 public class PlayStatusService : IPlayStatusService
 {
