@@ -4,13 +4,11 @@ namespace MeteorModApi.Models;
 
 public class PlayStatusEntry
 {
-    [MinLength(1)]
-    public string Name { get; init; }
+    [MinLength(1)] public required string Name { get; init; }
 
-    public string PlayerName { get; init; }
+    [MinLength(1)] public required string PlayerName { get; init; }
 
-    public string Server { get; init; }
-    
+    [MinLength(1)] public required string Server { get; init; }
+
     public DateTime Inserted { get; } = DateTime.Now;
-
 }
