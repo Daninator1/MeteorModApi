@@ -5,7 +5,10 @@
     <projectFile profileName="MeteorModApi">MeteorModApi/MeteorModApi.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d28f916-b224-4bb2-9d38-f2038598437c" name="Changes" comment="" />
+    <list default="true" id="7d28f916-b224-4bb2-9d38-f2038598437c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MeteorModApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MeteorModApi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MeteorModApi/Models/PlayStatusEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MeteorModApi/Models/PlayStatusEntry.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,16 +34,12 @@
       </map>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a1b1bdc5d5734053b71178cbc0764fa33400/ea/c63016b7/02000005pdb3High.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a1b1bdc5d5734053b71178cbc0764fa33400/ea/c63016b7/02000005pdb3Low.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="2AQmoUuS5YHyp8oMxL5JQuuk7Gm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -51,24 +50,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.5015015",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\danin\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\danin\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\danin\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Daniel\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MeteorModApi">
     <configuration name="MeteorModApi" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MeteorModApi/MeteorModApi.csproj" />
@@ -157,6 +157,11 @@
       <workItem from="1670435410815" duration="215000" />
       <workItem from="1677591334089" duration="406000" />
       <workItem from="1677592274252" duration="82000" />
+      <workItem from="1678910605798" duration="39000" />
+      <workItem from="1678910722523" duration="191000" />
+      <workItem from="1679846845368" duration="423000" />
+      <workItem from="1679847284370" duration="793000" />
+      <workItem from="1679848096946" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1654950458230</created>
