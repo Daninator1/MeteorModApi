@@ -6,6 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d28f916-b224-4bb2-9d38-f2038598437c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MeteorModApi/Models/PlayStatusPosition.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MeteorModApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MeteorModApi/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MeteorModApi/Models/PlayStatusEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MeteorModApi/Models/PlayStatusEntry.cs" afterDir="false" />
     </list>
@@ -34,6 +35,10 @@
       </map>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/26b98e5d2620a525c8d26e410fc5011788ab79b47af69242ea27721c16a/Vector_1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de1ef7ad7b19413e8a33a827cf50e7aa7f6f9ae7c2f36dd6e0ec79cfc9aacb/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -50,25 +55,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.5015015",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.5015015&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Daniel\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Daniel\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MeteorModApi">
     <configuration name="MeteorModApi" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MeteorModApi/MeteorModApi.csproj" />
@@ -161,7 +166,8 @@
       <workItem from="1678910722523" duration="191000" />
       <workItem from="1679846845368" duration="423000" />
       <workItem from="1679847284370" duration="793000" />
-      <workItem from="1679848096946" duration="38000" />
+      <workItem from="1679848096946" duration="92000" />
+      <workItem from="1679859271001" duration="1584000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1654950458230</created>
@@ -233,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677591697703</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="PoC of play status positions">
+      <created>1679848155820</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679848155820</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +278,8 @@
     <MESSAGE value="switch to name instead of guid" />
     <MESSAGE value="fix namespaces" />
     <MESSAGE value="update to .net 7, minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to .net 7, minor fixes" />
+    <MESSAGE value="PoC of play status positions" />
+    <option name="LAST_COMMIT_MESSAGE" value="PoC of play status positions" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
