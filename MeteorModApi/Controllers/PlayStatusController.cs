@@ -8,24 +8,16 @@ namespace MeteorModApi.Controllers;
 [Authorize]
 [ApiController]
 [Route("[controller]")]
-public class PlayStatusController : ControllerBase
+public class PlayStatusController(IPlayStatusService playStatusService)
+    : ControllerBase
 {
-    private readonly ILogger<PlayStatusController> logger;
-    private readonly IPlayStatusService playStatusService;
-
-    public PlayStatusController(ILogger<PlayStatusController> logger, IPlayStatusService playStatusService)
-    {
-        this.logger = logger;
-        this.playStatusService = playStatusService;
-    }
-
     [HttpGet]
-    public IEnumerable<PlayStatusEntry> Get() => this.playStatusService.GetEntries();
+    public IEnumerable<PlayStatusEntry> Get() => playStatusService.GetEntries();
 
     [HttpPost]
-    public void Post(PlayStatusEntry playerEntry) => this.playStatusService.AddOrUpdateEntry(playerEntry);
+    public void Post(PlayStatusEntry playerEntry) => playStatusService.AddOrUpdateEntry(playerEntry);
 
     [HttpDelete]
     [Route("{name}")]
-    public void Delete(string name) => this.playStatusService.RemoveEntry(name);
+    public void Delete(string name) => playStatusService.RemoveEntry(name);
 }

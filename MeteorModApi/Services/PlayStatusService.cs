@@ -2,16 +2,9 @@
 
 namespace MeteorModApi.Services;
 
-public class PlayStatusService : IPlayStatusService
+public class PlayStatusService(int maxAgeInMinutes) : IPlayStatusService
 {
-    private readonly int maxAgeInMinutes;
-    private IDictionary<string, PlayStatusEntry> entries;
-
-    public PlayStatusService(int maxAgeInMinutes)
-    {
-        this.maxAgeInMinutes = maxAgeInMinutes;
-        this.entries = new Dictionary<string, PlayStatusEntry>();
-    }
+    private Dictionary<string, PlayStatusEntry> entries = new();
 
     public IEnumerable<PlayStatusEntry> GetEntries()
     {
@@ -21,19 +14,16 @@ public class PlayStatusService : IPlayStatusService
 
     public void AddOrUpdateEntry(PlayStatusEntry entry)
     {
-        if (this.entries.ContainsKey(entry.Name))
-            this.entries[entry.Name] = entry;
-        else
-            this.entries.Add(entry.Name, entry);
+        this.entries[entry.Name] = entry;
     }
 
     public void RemoveEntry(string name)
     {
-        if (this.entries.ContainsKey(name)) this.entries.Remove(name);
+        this.entries.Remove(name);
     }
 
-    private IDictionary<string, PlayStatusEntry> FilterInactiveEntries(IDictionary<string, PlayStatusEntry> unfiltered)
+    private Dictionary<string, PlayStatusEntry> FilterInactiveEntries(IDictionary<string, PlayStatusEntry> unfiltered)
         => unfiltered
-            .Where(e => e.Value.Inserted.AddMinutes(this.maxAgeInMinutes) > DateTime.Now)
+            .Where(e => e.Value.Inserted.AddMinutes(maxAgeInMinutes) > DateTime.Now)
             .ToDictionary(e => e.Key, e => e.Value);
 }

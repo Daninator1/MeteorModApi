@@ -23,7 +23,7 @@ builder.Services.AddAuthentication(ApiKeyDefaults.AuthenticationScheme)
                     context.ValidationFailed();
 
                 return Task.CompletedTask;
-            }
+            },
         };
     });
 
@@ -45,10 +45,10 @@ builder.Services.AddSwaggerGen(options =>
         {
             new OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "ApiKey" }
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "ApiKey" },
             },
             Array.Empty<string>()
-        }
+        },
     });
 });
 
