@@ -5,8 +5,8 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IPlayStatusService, PlayStatusService>(_
-    => new PlayStatusService(builder.Configuration.GetValue<int>("MaxAgeInMinutes")));
+builder.Services.AddSingleton<IPlayStatusService, PlayStatusService>(_ => new PlayStatusService(builder.Configuration.GetValue<int>("MaxAgeInMinutes")));
+builder.Services.AddSingleton<IServerService, ServerService>();
 
 builder.Services.AddAuthentication(ApiKeyDefaults.AuthenticationScheme)
     .AddApiKeyInHeader(options =>
@@ -38,7 +38,6 @@ builder.Services.AddSwaggerGen(options =>
         Type = SecuritySchemeType.ApiKey,
         Name = "Api-Key",
         In = ParameterLocation.Header,
-        
     });
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     {

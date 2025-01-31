@@ -1,4 +1,4 @@
-using MeteorModApi.Models;
+using MeteorModApi.Models.PlayStatus;
 using MeteorModApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
