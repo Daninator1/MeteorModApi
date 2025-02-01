@@ -1,6 +1,13 @@
-﻿using MeteorModApi.Models;
+﻿using MeteorModApi.Models.PlayStatus;
 
 namespace MeteorModApi.Services;
+
+public interface IPlayStatusService
+{
+    IEnumerable<PlayStatusEntry> GetEntries();
+    void AddOrUpdateEntry(PlayStatusEntry entry);
+    void RemoveEntry(string id);
+}
 
 public class PlayStatusService(int maxAgeInMinutes) : IPlayStatusService
 {
@@ -12,15 +19,9 @@ public class PlayStatusService(int maxAgeInMinutes) : IPlayStatusService
         return this.entries.Values;
     }
 
-    public void AddOrUpdateEntry(PlayStatusEntry entry)
-    {
-        this.entries[entry.Name] = entry;
-    }
+    public void AddOrUpdateEntry(PlayStatusEntry entry) => this.entries[entry.Name] = entry;
 
-    public void RemoveEntry(string name)
-    {
-        this.entries.Remove(name);
-    }
+    public void RemoveEntry(string name) => this.entries.Remove(name);
 
     private Dictionary<string, PlayStatusEntry> FilterInactiveEntries(IDictionary<string, PlayStatusEntry> unfiltered)
         => unfiltered
