@@ -399,4 +399,4 @@ FodyWeavers.xsd
 .idea
 
 # Data folder
-.data
+.data/*
