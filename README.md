@@ -43,3 +43,7 @@ docker run --name meteor-mod-api \
 - Replace `API_KEY` with your actual API key.
 - Replace `SECONDS` with the desired max age for cleanup.
 - Replace `/path/to/data` with a persistent directory on your host machine.
+
+## Authenticating to the GitHub Container Registry
+
+For instructions on how to authenticate to the GitHub Container Registry, please refer to the [official guide](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry).
