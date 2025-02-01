@@ -7,7 +7,7 @@ To start the MeteorModApi container, use the following command:
 ```sh
 docker run --name meteor-mod-api \
   --pull=always \
-  -p PORT:80/tcp \
+  -p PORT:8080/tcp \
   -e ApiKey=API_KEY \
   --restart=always \
   -v /path/to/data:/app/data \
@@ -30,7 +30,7 @@ Replace `/path/to/data` with your desired persistent storage location.
 ```sh
 docker run --name meteor-mod-api \
   --pull=always \
-  -p PORT:80/tcp \
+  -p PORT:8080/tcp \
   -e ApiKey=API_KEY \
   -e MaxAgeInSeconds=SECONDS \
   --restart=always \
