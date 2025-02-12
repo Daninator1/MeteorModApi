@@ -32,7 +32,8 @@ public class SyncedSyncedServerService : ISyncedServerService
 
     private static Dictionary<Guid, SyncedServerInfo> LoadServers()
     {
-        Directory.CreateDirectory(Path.GetDirectoryName(ServersFilePath) ?? throw new InvalidOperationException("Invalid servers file path"));
+        Directory.CreateDirectory(Path.GetDirectoryName(ServersFilePath) ??
+                                  throw new InvalidOperationException("Invalid servers file path"));
 
         if (!File.Exists(ServersFilePath))
         {
@@ -40,7 +41,8 @@ public class SyncedSyncedServerService : ISyncedServerService
         }
 
         var serversJson = File.ReadAllText(ServersFilePath);
-        return JsonSerializer.Deserialize<Dictionary<Guid, SyncedServerInfo>>(serversJson) ?? new Dictionary<Guid, SyncedServerInfo>();
+        return JsonSerializer.Deserialize<Dictionary<Guid, SyncedServerInfo>>(serversJson) ??
+               new Dictionary<Guid, SyncedServerInfo>();
     }
 
     private static void SaveServers(Dictionary<Guid, SyncedServerInfo> servers)

@@ -5,7 +5,8 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IPlayStatusService, PlayStatusService>(_ => new PlayStatusService(builder.Configuration.GetValue<int>("MaxAgeInMinutes")));
+builder.Services.AddSingleton<IPlayStatusService, PlayStatusService>(_ =>
+    new PlayStatusService(builder.Configuration.GetValue<int>("MaxAgeInMinutes")));
 builder.Services.AddSingleton<ISyncedServerService, SyncedSyncedServerService>();
 
 builder.Services.AddAuthentication(ApiKeyDefaults.AuthenticationScheme)
