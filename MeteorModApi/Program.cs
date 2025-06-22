@@ -43,6 +43,7 @@ app.MapOpenApi();
 app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/openapi/v1.json", "v1");
+    options.EnableTryItOutByDefault();
 });
 
 app.MapControllers();
