@@ -1,5 +1,6 @@
 using AspNetCore.Authentication.ApiKey;
 using MeteorModApi.Services;
+using MeteorModApi.Transformers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +29,10 @@ builder.Services.AddAuthentication(ApiKeyDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    options.AddDocumentTransformer<ApiKeySecuritySchemeTransformer>();
+});
 
 var app = builder.Build();
 
