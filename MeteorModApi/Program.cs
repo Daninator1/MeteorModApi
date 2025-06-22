@@ -1,6 +1,5 @@
 using AspNetCore.Authentication.ApiKey;
 using MeteorModApi.Services;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,39 +28,18 @@ builder.Services.AddAuthentication(ApiKeyDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
-    {
-        Description = "API Key must be set in order to access the API.",
-        Type = SecuritySchemeType.ApiKey,
-        Name = "Api-Key",
-        In = ParameterLocation.Header,
-    });
-    options.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "ApiKey" },
-            },
-            Array.Empty<string>()
-        },
-    });
-});
+builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-app.UseSwagger();
-app.UseSwaggerUI();
-
-//app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapOpenApi();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/openapi/v1.json", "v1");
+});
 
 app.MapControllers();
 
