@@ -76,7 +76,7 @@ jobs:
           tags: |
             # set timestamped tag for main branch pushes
             type=raw,value=main-${{ steps.timestamp.outputs.timestamp }},enable={{is_default_branch}}
-            # set latest tag for main branch pushes  
+            # set latest tag for main branch pushes
             type=raw,value=latest,enable={{is_default_branch}}
             # set a tag for each semver release
             type=ref,event=tag
