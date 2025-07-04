@@ -11,8 +11,16 @@ docker run --name meteor-mod-api \
   -e ApiKey=API_KEY \
   --restart=always \
   -v /path/to/data:/app/data \
-  -d ghcr.io/daninator1/meteormodapi:main
+  -d ghcr.io/daninator1/meteormodapi:latest
 ```
+
+### Available Tags
+
+- `latest`: The most recent build from the main branch
+- `main-YYYYMMDD-HHMMSS`: Timestamped builds from the main branch (e.g., `main-20240101-143000`)
+- `v*.*.*`: Semantic version releases (e.g., `v1.0.0`)
+
+For production deployments, it's recommended to use a specific timestamped tag or semantic version tag instead of `latest`.
 
 ### Environment Variables
 - `ApiKey` (required): API key for authentication.
@@ -35,7 +43,7 @@ docker run --name meteor-mod-api \
   -e MaxAgeInSeconds=SECONDS \
   --restart=always \
   -v /path/to/data:/app/data \
-  -d ghcr.io/daninator1/meteormodapi:main
+  -d ghcr.io/daninator1/meteormodapi:latest
 ```
 
 ## Notes
