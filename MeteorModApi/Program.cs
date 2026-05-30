@@ -1,6 +1,7 @@
 using AspNetCore.Authentication.ApiKey;
 using MeteorModApi.Services;
 using MeteorModApi.Transformers;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,10 +30,7 @@ builder.Services.AddAuthentication(ApiKeyDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddControllers();
-builder.Services.AddOpenApi(options =>
-{
-    options.AddDocumentTransformer<ApiKeySecuritySchemeTransformer>();
-});
+builder.Services.AddOpenApi(options => { options.AddDocumentTransformer(new ApiKeySecuritySchemeTransformer()); });
 
 var app = builder.Build();
 
@@ -40,10 +38,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapOpenApi();
-app.UseSwaggerUI(options =>
+app.MapScalarApiReference(options =>
 {
-    options.SwaggerEndpoint("/openapi/v1.json", "v1");
-    options.EnableTryItOutByDefault();
+    options.DisableAgent();
+    options.DisableMcp();
+    options.HideClientButton = true;
+    options.PersistentAuthentication = true;
 });
 
 app.MapControllers();

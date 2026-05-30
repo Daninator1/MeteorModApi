@@ -12,13 +12,17 @@
         <PackageReference Include="AspNetCore.Authentication.ApiKey" Version="9.0.0"/>
         <PackageReference Include="JetBrains.Annotations" Version="2025.2.4" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8" />
-        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.2.0" />
+        <PackageReference Include="Scalar.AspNetCore" Version="2.14.14" />
     </ItemGroup>
 
     <ItemGroup>
         <Content Update="appsettings.Development.json">
             <DependentUpon>appsettings.json</DependentUpon>
         </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Transformers\" />
     </ItemGroup>
 
 </Project>
