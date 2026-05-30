@@ -42,8 +42,8 @@ app.MapScalarApiReference(options =>
 {
     options.DisableAgent();
     options.DisableMcp();
-    options.HideClientButton = true;
-    options.PersistentAuthentication = true;
+    options.HideClientButton();
+    options.EnablePersistentAuthentication();
 });
 
 app.MapControllers();
