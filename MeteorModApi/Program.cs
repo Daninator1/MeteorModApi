@@ -43,6 +43,8 @@ app.MapScalarApiReference(options =>
     options.DisableAgent();
     options.DisableMcp();
     options.HideClientButton();
+    options.DisableTelemetry();
+    options.ShowDeveloperTools = DeveloperToolsVisibility.Never;
     options.EnablePersistentAuthentication();
 });
 
