@@ -2,7 +2,7 @@
 WORKDIR /app
 EXPOSE 8080
 
-FROM mcr.microsoft.com/dotnet/sdk:11.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:11.0 AS publish
 WORKDIR /src
 COPY ["MeteorModApi/MeteorModApi.csproj", "MeteorModApi/"]
 RUN dotnet restore "MeteorModApi/MeteorModApi.csproj"
