@@ -11,8 +11,8 @@
     <ItemGroup>
         <PackageReference Include="AspNetCore.Authentication.ApiKey" Version="9.0.0"/>
         <PackageReference Include="JetBrains.Annotations" Version="2026.2.0" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.14" />
-        <PackageReference Include="Scalar.AspNetCore" Version="2.18.5" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="11.0.0" />
+        <PackageReference Include="Scalar.AspNetCore" Version="2.20.0" />
     </ItemGroup>
 
     <ItemGroup>
