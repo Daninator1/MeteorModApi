@@ -1,49 +1,56 @@
 # MeteorModApi
 
-## Running the Container
+## Running with Docker
 
-To start the MeteorModApi container, use the following command:
+The container listens on port `8080`. Replace the values in angle brackets with
+your own values:
 
 ```sh
 docker run --name meteor-mod-api \
   --pull=always \
-  -p PORT:8080/tcp \
-  -e ApiKey=API_KEY \
   --restart=always \
-  -v /path/to/data:/app/data \
+  -p <host-port>:8080 \
+  -e ApiKey=<api-key> \
+  -e MaxAgeInMinutes=<minutes> \
+  -v <data-directory>:/app/data \
   -d ghcr.io/daninator1/meteormodapi:main
 ```
 
-### Environment Variables
-- `ApiKey` (required): API key for authentication.
-- `MaxAgeInSeconds` (optional): Override the default maximum age (in seconds) for cleanup.
+`ApiKey` is required and must be sent in the `Api-Key` request header.
+`MaxAgeInMinutes` is optional and defaults to `10`. The `/app/data` mount
+stores synced servers; use a persistent directory on the host.
 
-### Persisting Synced Servers
-To persist synced servers, mount a volume to `/app/data`:
+### Docker Compose
+
+Create `compose.yml`:
+
+```yaml
+services:
+  meteor-mod-api:
+    image: ghcr.io/daninator1/meteormodapi:main
+    container_name: meteor-mod-api
+    restart: always
+    ports:
+      - "<host-port>:8080"
+    environment:
+      ApiKey: "<api-key>"
+      MaxAgeInMinutes: "<minutes>"
+    volumes:
+      - "<data-directory>:/app/data"
+```
+
+Start it with:
 
 ```sh
--v /path/to/data:/app/data
-```
-Replace `/path/to/data` with your desired persistent storage location.
-
-### Example with Max Age Override
-```sh
-docker run --name meteor-mod-api \
-  --pull=always \
-  -p PORT:8080/tcp \
-  -e ApiKey=API_KEY \
-  -e MaxAgeInSeconds=SECONDS \
-  --restart=always \
-  -v /path/to/data:/app/data \
-  -d ghcr.io/daninator1/meteormodapi:main
+docker compose up -d
 ```
 
-## Notes
-- Replace `PORT` with the port number you want to expose.
-- Replace `API_KEY` with your actual API key.
-- Replace `SECONDS` with the desired max age for cleanup.
-- Replace `/path/to/data` with a persistent directory on your host machine.
+Replace `<host-port>` with the port exposed on the host, `<api-key>` with the
+shared API key used by clients, `<minutes>` with the cleanup age, and
+`<data-directory>` with a persistent host directory. The `MaxAgeInMinutes`
+environment variable and the data volume are optional.
 
 ## Authenticating to the GitHub Container Registry
 
-For instructions on how to authenticate to the GitHub Container Registry, please refer to the [official guide](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry).
+For instructions on authenticating to the GitHub Container Registry, see the
+[official guide](https://docs.github.com/en/packages/working-with-a-github-packages-registry#authenticating-to-the-container-registry).
